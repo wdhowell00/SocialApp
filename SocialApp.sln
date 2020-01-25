@@ -15,6 +15,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Application\
 		{E7C3EAC9-1E7A-4E8B-84C4-3222EA340CB7} = {E7C3EAC9-1E7A-4E8B-84C4-3222EA340CB7}
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{180979B7-0ED8-46A6-8702-500B808CFBE5}"
+	ProjectSection(SolutionItems) = preProject
+		CodeSnippets.xml = CodeSnippets.xml
+		CommandHandler.snippet = CommandHandler.snippet
+		QueryHandler.snippet = QueryHandler.snippet
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

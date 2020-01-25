@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Command Handler</Title>
+      <Description>Add Command Handler Snippet</Description>
+    <Shortcut>chandler</Shortcut>
+    </Header>
+    <Snippet>
+      <Code Language="CSharp">
+        <![CDATA[
+          public class Command : IRequest
+			{
+				// Properties go here
+			}
+
+			public class Handler : IRequestHandler<Command>
+			{
+				private readonly DataContext _context;
+
+				public Handler(DataContext context)
+				{
+					_context = context;
+				}
+
+				public async Task<Unit> Handle(Command request, CancellationToken cancellationToken)
+				{
+					//Handler Logic goes here
+
+					var success = await _context.SaveChangesAsync() > 0;
+
+					if (success) return Unit.Value;
+
+					throw new Exception("Problem Saving Changes");
+				}
+			}
+        ]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

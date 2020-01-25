@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Query Handler</Title>
+      <Description>Add Query Handler Snippet</Description>
+    <Shortcut>qhandler</Shortcut>
+    </Header>
+    <Snippet>
+      <Code Language="CSharp">
+        <![CDATA[
+          public class Query : IRequest<($ReturnObject$)> { }
+
+          public class Handler : IRequestHandler<Query, ($ReturnObject$)>
+          {
+            private readonly DataContext _context;
+
+            public Handler(DataContext context)
+            {
+                _context = context;
+            }
+
+            public async Task<List<Activity>> Handle(Query request, CancellationToken cancellationToken)
+            {
+                // Handler Logic goes here
+            }
+        }
+        ]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
