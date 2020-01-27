@@ -10,7 +10,22 @@
       <Code Language="CSharp">
         <![CDATA[
           
-          //snippet code goes here
+           public class Query : IRequest<($ReturnObject$)> { }
+
+            public class Handler : IRequestHandler<Query, ($ReturnObject$)>
+            {
+              private readonly DataContext _context;
+
+              public Handler(DataContext context)
+              {
+                  _context = context;
+              }
+
+              public async Task<List<Activity>> Handle(Query request, CancellationToken cancellationToken)
+              {
+                  // Handler Logic goes here
+              }
+          }
           
         ]]>
       </Code>
